@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HyPlayer (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "HyPlayer (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
