@@ -35,7 +35,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\HyPlayer.NCM\HyPlayer.NCMProvider\HyPlayer.NCMProvider\HyPlayer.NCMProvider.csproj" />
-    <ProjectReference Include="..\..\..\HyPlayer.PlayCore\HyPlayer.Casper\HyPlayer.Casper.csproj" />
+    <ProjectReference Include="..\HyPlayer.Casper\HyPlayer.Casper\HyPlayer.Casper.csproj" />
+    <ProjectReference Include="..\HyPlayer.NCMProvider\HyPlayer.NCMProvider\HyPlayer.NCMProvider.csproj" />
   </ItemGroup>
 </Project>
