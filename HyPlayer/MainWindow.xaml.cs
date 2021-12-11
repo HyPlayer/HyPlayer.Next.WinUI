@@ -25,9 +25,8 @@ namespace HyPlayer
         
         public MainWindow()
         {
-            this.InitializeComponent();
-            WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
-            PlayCore = new PlayCore(WindowHandle);
+            this.InitializeComponent();            
+            PlayCore = new PlayCore(this);
             _neteaseCloudMusicProvider = new NeteaseCloudMusicProvider();
             PlayCore.RegisterMusicProvider(_neteaseCloudMusicProvider);
         }
@@ -43,18 +42,15 @@ namespace HyPlayer
             PlayCore.PlayService.Play();
         }
 
-        private async void ButtonNextMusic_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonNextMusic_OnClick(object sender, RoutedEventArgs e)
         {
-            PlayCore.PlayService.Stop();
-            PlayCore.MoveNext();
-            await PlayCore.LoadNowPlayingItemMedia();
+            PlayCore.MoveNextAndPlay();
         }
 
         private async void ButtonLoadPlayList_OnClick(object sender, RoutedEventArgs e)
         {
             var list = (await _neteaseCloudMusicProvider.GetPlayItem("pl" + AccountInfo.PlayListId)) as NCMUserPlayList;
-            PlayCore.ReplacePlaySource(list);
-            PlayCore.LoadPlaySource();
+            PlayCore.ReplacePlaySourceAndMoveToStart(list);
         }
 
         private void ButtonPauseMusic_OnClick(object sender, RoutedEventArgs e)

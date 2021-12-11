@@ -11,6 +11,24 @@
     <UseWinUI>true</UseWinUI>
     <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
+    <DefineConstants>WINUI</DefineConstants>
+  </PropertyGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -35,7 +53,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HyPlayer.Casper\HyPlayer.Casper\HyPlayer.Casper.csproj" />
-    <ProjectReference Include="..\HyPlayer.NCMProvider\HyPlayer.NCMProvider\HyPlayer.NCMProvider.csproj" />
+    <ProjectReference Include="..\HyPlayer.Casper\HyPlayer.Casper.csproj" />
+    <ProjectReference Include="..\HyPlayer.NCMProvider\HyPlayer.NCMProvider.csproj" />
   </ItemGroup>
 </Project>
