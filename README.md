@@ -1,4 +1,4 @@
-# HyPlayer.Next
+# HyPlayer.Next.WinUI
 
 采用 WinUI 3 开发的下一代 HyPlayer
 
