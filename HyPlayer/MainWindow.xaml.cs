@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml.Data;
 using System;
 using System.Collections.Generic;
+using HyPlayer.Casper;
 using HyPlayer.Casper.Model;
 using HyPlayer.NCMProvider;
 using HyPlayer.NCMProvider.Models;
@@ -19,10 +20,14 @@ namespace HyPlayer
     {
         private NeteaseCloudMusicProvider _neteaseCloudMusicProvider;
         public AccountInfo AccountInfo = new AccountInfo();
-
+        public PlayCore PlayCore; 
+        public IntPtr WindowHandle;
+        
         public MainWindow()
         {
             this.InitializeComponent();
+            WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            PlayCore = new PlayCore(WindowHandle);
             _neteaseCloudMusicProvider = new NeteaseCloudMusicProvider();
             PlayCore.RegisterMusicProvider(_neteaseCloudMusicProvider);
         }

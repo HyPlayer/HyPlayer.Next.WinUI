@@ -10,7 +10,6 @@
     <Grid>
         <Grid.Resources>
             <local:PlayListConverter x:Key="PlayListConverter" />
-            <casper:PlayCore x:Key="PlayCore" x:Name="PlayCore" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition />
